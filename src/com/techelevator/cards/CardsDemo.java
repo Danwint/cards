@@ -6,5 +6,8 @@ public class CardsDemo {
 	public static void main(String[] args) {
 		Card newCard = new Card(ACE, SPADES);
 		System.out.println("Your card is the "+newCard.getRank()+" of "+newCard.getSuit());
+		
+		Deck newDeck = new Deck();
+		
 	}
 }
