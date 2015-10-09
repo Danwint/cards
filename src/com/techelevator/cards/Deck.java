@@ -22,6 +22,7 @@ public class Deck {
 		}
 
 	}
+	
 	public Card [] deal(int handDealt) {
 		Card [] hand = new Card [handDealt];
 		for(int i = 0;i < handDealt; i++){
