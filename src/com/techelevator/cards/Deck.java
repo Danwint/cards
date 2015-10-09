@@ -6,7 +6,8 @@ public class Deck {
 	private int numberOfCards;
 	private Card[] cardsInDeck;
 	private static final String[] SUITS = new String[] { HEARTS, CLUBS, SPADES, DIAMONDS };
-
+	int topOfDeck = 0;
+	
 	public Deck() {
 		cardsInDeck = new Card[52];
 
@@ -20,5 +21,14 @@ public class Deck {
 			offset += 13;
 		}
 
+	}
+	public Card [] deal(int handDealt) {
+		Card [] hand = new Card [handDealt];
+		for(int i = 0;i < handDealt; i++){
+			hand [i] = cardsInDeck [topOfDeck];
+			topOfDeck++;
+		}
+		return hand;
+		
 	}
 }
