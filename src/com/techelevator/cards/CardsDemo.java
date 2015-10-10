@@ -1,30 +1,27 @@
 package com.techelevator.cards;
 
-import static com.techelevator.cards.Card.*;
+import static com.techelevator.cards.Blackjack.*;
+
+import java.io.IOException;
 
 public class CardsDemo {
-	public static void main(String[] args) {
-		Card newCard = new Card(ACE, SPADES);
-		System.out.println(newCard);
-		System.out.println("Your card is the "+newCard.getRank()+" of "+newCard.getSuit());
+	public static void main(String[] args) throws IOException {
 		
 		Deck newDeck = new Deck();
-		Card[] christosCards = newDeck.deal(5);
-		Card[] brucesCards = newDeck.deal(5);
-		Card[] dannysCards = newDeck.deal(5);
+		newDeck.shuffle();
+		Card[] christosCards = newDeck.deal(7);
+		Card[] brucesCards = newDeck.deal(7);
+		Card[] dannysCards = newDeck.deal(7);
 		
 		showCards("Christo", christosCards);
 		showCards("Bruce", brucesCards);
 		showCards("Danny", dannysCards);
 		
+		System.out.println("\n\n******BlackJack******");
+
+		playBlackjack(1, newDeck);
+		
+		System.out.println("\n******End of Game******\n\n");
 	}
-	
-	public static void showCards(String name, Card[] cards) {
-		System.out.println(name+"'s cards: ");
-		for(Card c : cards) {
-			System.out.println(c.getRank()+" of "+c.getSuit());
-		}
-	}
-	
-	
+
 }
