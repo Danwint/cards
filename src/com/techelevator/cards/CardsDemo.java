@@ -9,17 +9,10 @@ public class CardsDemo {
 		
 		Deck newDeck = new Deck();
 		newDeck.shuffle();
-		Card[] christosCards = newDeck.deal(7);
-		Card[] brucesCards = newDeck.deal(7);
-		Card[] dannysCards = newDeck.deal(7);
-		
-		showCards("Christo", christosCards);
-		showCards("Bruce", brucesCards);
-		showCards("Danny", dannysCards);
 		
 		System.out.println("\n\n******BlackJack******");
 
-		playBlackjack(1, newDeck);
+		playBlackjack(3, newDeck);
 		
 		System.out.println("\n******End of Game******\n\n");
 	}
